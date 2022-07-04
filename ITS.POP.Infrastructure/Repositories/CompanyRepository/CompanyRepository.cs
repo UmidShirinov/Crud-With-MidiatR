@@ -24,7 +24,7 @@ namespace ITS.POP.Infrastructure.Repositories.CompanyRepository
             _context = dapperContext;
         }
 
-        public Task<Company> AddCompanyAsync(Company Company)
+        public Task<Companies> AddCompanyAsync(Companies Company)
         {
             throw new NotImplementedException();
         }
@@ -34,31 +34,31 @@ namespace ITS.POP.Infrastructure.Repositories.CompanyRepository
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Company>> GetCompaniesAsync()
+        public async Task<IEnumerable<Companies>> GetCompaniesAsync()
         {
             var query =@"SELECT * FROM ""Company"" ";
           
             using (var connection = _context.CreateConnection())
             {
                 connection.Open();
-                var companies = await connection.QueryAsync<Company>(query);
+                var companies = await connection.QueryAsync<Companies>(query);
                 connection.Close();
                 return companies.ToList();
             }
 
         }
 
-        public Task<Company> GetCompanyByIdAsync(int id)
+        public Task<Companies> GetCompanyByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Company> GetCompanyByNameAsync(string name)
+        public Task<Companies> GetCompanyByNameAsync(string name)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Company> UpdateCompanyAsync(Company Company)
+        public Task<Companies> UpdateCompanyAsync(Companies Company)
         {
             throw new NotImplementedException();
         }

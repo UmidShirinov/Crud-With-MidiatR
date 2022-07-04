@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITS.POP.Domain.Model
 {
-    public class Company
+    public class Companies
     {
         public int Id { get; set; }
         public string? Name { get; set; }
